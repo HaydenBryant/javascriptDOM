@@ -1,6 +1,9 @@
 const bookList = document.querySelector('#book-list');
 
-console.log('the parent node:', bookList.parentNode);
-console.log('the parent element:', bookList.parentElement.parentElement);
+console.log('bookList next sibling is', bookList.nextSibling);
+console.log('bookList next element sibling is', bookList.nextElementSibling);
 
-console.log(bookList.children);
+console.log('bookList previous sibling is', bookList.previousSibling);
+console.log('bookList previous element sibling is', bookList.previousElementSibling);
+
+bookList.previousElementSibling.querySelector('p').innerHTML += '<br/> too cool';
