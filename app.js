@@ -1,9 +1,17 @@
-const bookList = document.querySelector('#book-list');
+var btns = document.querySelectorAll('#book-list .delete');
 
-console.log('bookList next sibling is', bookList.nextSibling);
-console.log('bookList next element sibling is', bookList.nextElementSibling);
+Array.from(btns).forEach(function(btn){
+   btn.addEventListener('click', function(e){
+      
+      const li = e.target.parentElement;
+      li.parentNode.removeChild(li);
+       
+   });
+});
 
-console.log('bookList previous sibling is', bookList.previousSibling);
-console.log('bookList previous element sibling is', bookList.previousElementSibling);
+const link = document.querySelector('#page-banner a');
 
-bookList.previousElementSibling.querySelector('p').innerHTML += '<br/> too cool';
+link.addEventListener('click', function(e){
+    e.preventDefault();
+    console.log("navigation to", e.target.textContent, "was prevented");
+});
